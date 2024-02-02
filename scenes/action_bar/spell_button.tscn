@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://b22bv8yy6h26d"]
+
+[ext_resource type="Texture2D" uid="uid://cc5qygf17cadb" path="res://icon.svg" id="1_fx1jr"]
+[ext_resource type="Script" path="res://scenes/action_bar/spell_button.gd" id="2_bfccy"]
+[ext_resource type="Texture2D" uid="uid://papa0qtqqq7x" path="res://assets/white40x40.png" id="3_gndtg"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qo15m"]
+
+[sub_resource type="Shortcut" id="Shortcut_rql8f"]
+events = [SubResource("InputEventKey_qo15m")]
+
+[node name="SpellButton" type="TextureButton"]
+custom_minimum_size = Vector2(40, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+shortcut = SubResource("Shortcut_rql8f")
+texture_normal = ExtResource("1_fx1jr")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_bfccy")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+step = 0.05
+fill_mode = 5
+texture_progress = ExtResource("3_gndtg")
+tint_progress = Color(0, 0, 0, 0.356863)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Key" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+vertical_alignment = 2

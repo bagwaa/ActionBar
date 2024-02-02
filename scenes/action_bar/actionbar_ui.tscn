@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccnh1kwvknsuy"]
+
+[ext_resource type="Script" path="res://scenes/action_bar/action_bar.gd" id="1_gqves"]
+[ext_resource type="PackedScene" uid="uid://b22bv8yy6h26d" path="res://scenes/action_bar/spell_button.tscn" id="2_8v87c"]
+[ext_resource type="Texture2D" uid="uid://dk3m7t08c4epc" path="res://spells/00003.png" id="3_o68pt"]
+[ext_resource type="Texture2D" uid="uid://54qdjup3jbvn" path="res://spells/00009.png" id="4_7is2c"]
+[ext_resource type="Texture2D" uid="uid://cqeap868j7gsn" path="res://spells/00012.png" id="5_xssfo"]
+[ext_resource type="Texture2D" uid="uid://bxk1n64x6yt7s" path="res://spells/00019.png" id="6_72atn"]
+[ext_resource type="Texture2D" uid="uid://cb6wj2033isid" path="res://spells/00035.png" id="7_5uqiy"]
+
+[node name="ActionBarUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActionBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -108.0
+offset_top = -50.0
+offset_right = 108.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_gqves")
+
+[node name="Spell1" parent="ActionBar" instance=ExtResource("2_8v87c")]
+layout_mode = 2
+texture_normal = ExtResource("3_o68pt")
+
+[node name="Spell2" parent="ActionBar" instance=ExtResource("2_8v87c")]
+layout_mode = 2
+texture_normal = ExtResource("4_7is2c")
+cooldown_timer = 2.5
+
+[node name="Spell3" parent="ActionBar" instance=ExtResource("2_8v87c")]
+layout_mode = 2
+texture_normal = ExtResource("5_xssfo")
+cooldown_timer = 5.0
+
+[node name="Spell4" parent="ActionBar" instance=ExtResource("2_8v87c")]
+layout_mode = 2
+texture_normal = ExtResource("6_72atn")
+cooldown_timer = 8.5
+
+[node name="Spell5" parent="ActionBar" instance=ExtResource("2_8v87c")]
+layout_mode = 2
+texture_normal = ExtResource("7_5uqiy")
+cooldown_timer = 30.0

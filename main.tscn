@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://vavb606uaqsn"]
+
+[ext_resource type="PackedScene" uid="uid://dfsbdgc2itbrw" path="res://scenes/player/player.tscn" id="1_lpx8r"]
+[ext_resource type="Script" path="res://main.gd" id="1_uinxt"]
+[ext_resource type="PackedScene" uid="uid://cwlx7e434lkpc" path="res://scenes/background/background.tscn" id="2_ae25q"]
+[ext_resource type="PackedScene" uid="uid://ccnh1kwvknsuy" path="res://scenes/action_bar/actionbar_ui.tscn" id="2_jcdd5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p31tk"]
+font_size = 12
+font_color = Color(0, 0.113725, 0.113725, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uinxt")
+
+[node name="Background" parent="." instance=ExtResource("2_ae25q")]
+
+[node name="Player" parent="." instance=ExtResource("1_lpx8r")]
+position = Vector2(100, 100)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 641.0
+offset_bottom = 362.0
+
+[node name="ActionBarUI" parent="Control" instance=ExtResource("2_jcdd5")]
+layout_mode = 1
+
+[node name="ButtonPressedLabel" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -11.5
+offset_right = 66.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionsLabel" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = 21.5
+offset_right = 149.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "W A S D for simple movement (no lerp)
+Press 1 to 5 or Mouse Click Actionbar"
+label_settings = SubResource("LabelSettings_p31tk")
+horizontal_alignment = 1
+vertical_alignment = 1
